@@ -20,6 +20,7 @@ If you’re used to writing code on your regular computer using Sublime Text, yo
 2. On your Raspberry Pi:
 
   1. Download rmate
+  
     `curl https://raw.githubusercontent.com/aurora/rmate/master/rmate > rmate`
 
   2. Move it to `/usr/local/bin` and make it executable:
