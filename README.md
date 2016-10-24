@@ -159,7 +159,7 @@ Have fun and feel free to post questions/suggestions.
 	
     `scp <source> pi@<pi_ip>:<destination>`
 
-    where `<source>` is the path to the file you want to copy and `<pi_ip>` is your Raspberry Pi’s IP address.
+    where `<source>` is the path to the file you want to copy, `<pi_ip>` is your Raspberry Pi’s IP address, and `<destination>` the path to this project directory on your Raspberry Pi.
     
 
   3. Run the displayGIF script to display your animation.
@@ -170,7 +170,7 @@ Have fun and feel free to post questions/suggestions.
   
     By default, the script displays the included sample gif created by @jettisonjoe. (Thanks Joe!) ![Ghost] (https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif)
   
-    To display your own gif, simply replace ‘myGIF’ in the code with the name of your gif.
+    To display your own gif, simply replace `myGIF` in the code with the name of your gif.
 
     Use `Ctrl-C` in the command line to stop the script.
     
