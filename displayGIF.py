@@ -5,6 +5,8 @@ Running this code assumes that you have followed the instructions and installed
 the dependencies as described in the README file:
 https://github.com/poemusica/rpi-matrix-gif/blob/master/README.md
 
+Requires rgbmatrix.so to be present in the same directory as this script.
+
 Gif extraction code copied from BigglesZX's github gist (thank you!):
 https://gist.github.com/BigglesZX/4016539
 """
