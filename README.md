@@ -107,41 +107,10 @@ Have fun and feel free to post questions/suggestions.
     
 
   4. Set Up Remote Code Editing with Sublime Text. (Optional)
-
-    If you’re used to writing code on your regular computer using Sublime Text, you might want to set up rsub/rmate. Then you can open files located your Raspberry Pi using Sublime Text on your regular computer. 
-  
-    On your regular computer:
-    - Install the rsub plugin for Sublime Text.
-    
-      https://packagecontrol.io/packages/rsub
-      
-    - Modify your `~/.ssh/config` file to include the following lines:
-    
-      ```
-      Host <pi_ip>
-      RemoteForward 52698 127.0.0.1:52698
-      ```
-
-      where `<pi_ip>` is your Raspberry Pi’s IP address.
-    
-    On your Raspberry Pi:
-    - Download rmate
-    
-      `curl https://raw.githubusercontent.com/aurora/rmate/master/rmate > rmate`
-    
-    - Move it to `/usr/local/bin` and make it executable:
-    
-      `sudo mv rmate /usr/local/bin`
-    
-      `sudo chmod +x /usr/local/bin/rmate`
-    
-    - Make a symlink so that you can invoke Sublime Text from the command line:
+  		
+	https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md
 	
-      `ln -s /usr/local/bin/rmate.sh  /usr/local/bin/subl`
-  
-    Now you can use the command `subl <file>` to open your Raspberry Pi files via SSH using Sublime Text.
-    
-    Alternatively, you can ignore this step altogether and just use Nano to write and edit code. Nano is a simple command line text editor that comes preinstalled on Raspbian OS.
+	Alternatively, you can ignore this step altogether and just use Nano to write and edit code. Nano is a simple command line text editor that comes preinstalled on Raspbian OS.
     
     http://www.tutorialspoint.com/articles/how-to-use-nano-text-editor
     
@@ -172,7 +141,7 @@ Have fun and feel free to post questions/suggestions.
   https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices
   
   When you have the Adafruit demos working, you’re ready to start creating designs of your own!
-  
+
 
 4. **Display Pixel Art Animations**
 
