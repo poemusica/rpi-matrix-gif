@@ -1,8 +1,9 @@
-""" Displays 32x32 animated gif on Adafruit RGB LED Matrix.
+"""
+Displays 32x32 animated gif on Adafruit RGB LED Matrix.
 
 Running this code assumes that you have followed the instructions and installed
 the dependencies as described in the README file:
-[link]
+https://github.com/poemusica/rpi-matrix-gif/blob/master/README.md
 
 Gif extraction code copied from BigglesZX's github gist (thank you!):
 https://gist.github.com/BigglesZX/4016539
