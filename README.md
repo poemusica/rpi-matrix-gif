@@ -1,8 +1,16 @@
 # Animated GIFs on Adafruit RGB LED Matrix with Raspberry Pi
 
-This tutorial explains how to display an animated gif on an Adafruit RGB LED Matrix panel using a Raspberry Pi microcontroller. 
+**Table of Contents**
+- [About](https://github.com/poemusica/rpi-matrix-gif#about)
+- [Hardware](https://github.com/poemusica/rpi-matrix-gif#hardware)
+- [Software](https://github.com/poemusica/rpi-matrix-gif#software)
+- [Instructions](https://github.com/poemusica/rpi-matrix-gif#instructions)
 
-I used my matrix to display a spooky ghost gif for Halloween. :jack_o_lantern:
+
+## ABOUT
+This README describes the process of using a **Raspberry Pi** microcontroller along with my `displayGIF.py` script to display an **animated gif** on an **Adafruit RGB LED Matrix**. 
+
+For example, I used my matrix to display a spooky ghost gif for Halloween. :jack_o_lantern:
 
 ---
 <a href="https://twitter.com/heatheramahan/status/789191493088980992"><img align="left" height="150" src="https://i.giphy.com/media/rZL5cIy8irYM2JCL75/giphy-downsized-large.gif"></a>
@@ -31,7 +39,7 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 
   <a href="https://www.adafruit.com/products/2026"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2026-05.jpg"></a>
   
-  Displays your animated gif / graphics on a grid of 1024 RGB LEDs!
+  Displays graphics on a grid of 1024 RGB LEDs!
   
 
 ### Microcontroller
@@ -45,17 +53,17 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
   
   <a href="https://www.adafruit.com/product/2345"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2345-08.jpg"></a>
 
-  Plugs into your Raspberry Pi and allows you to control the RBG LED Matrix panel. 
+  Plugs into your Raspberry Pi and allows you to control the RBG LED Matrix panel. (Soldering required!)
   
 * [8GB Class 10 SD/MicroSD Memory Card - SD Adapter Included](https://www.adafruit.com/products/2692)
 
   <a href="https://www.adafruit.com/products/2692"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2692-01.jpg"></a>
   
-  Storage for your Raspberry Pi OS and your projects.
+  Storage for Raspberry Pi OS and your projects.
 
 * ~~<s> (Optional) [Miniature WiFi (802.11b/g/n) Module: For Raspberry Pi and more](https://www.adafruit.com/product/814) </s>~~
   
-  This product is now discontinued. See the item below for alternatives.
+  Product discontinued. See item below for alternatives.
   
 * (Optional) [Mini USB WiFi Module - RTL8188eu - 802.11b/g/n](https://www.adafruit.com/product/2810)
   
@@ -102,9 +110,9 @@ You’ll need these last two items to interface with your Raspberry Pi the first
   
   Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.)
 
-* Nano
+* [Nano](https://www.nano-editor.org/)
   
-  A simple command line editor that omes pre-installed on Raspberry Pi OS. (Or some other code editor, such as VS Code.)
+  Command line text editor that comes pre-installed on Raspberry Pi OS. (Or some other code editor, such as [Sublime Text](https://www.sublimetext.com/) or [VS Code](https://code.visualstudio.com/).)
 
 ---
 
@@ -114,20 +122,25 @@ You’ll need these last two items to interface with your Raspberry Pi the first
 
 <ol>
   <li>
-    Follow Adafruit’s instructions for getting Raspberry Pi OS running on your Raspberry Pi.
-    I used the <a href="https://www.raspberrypi.com/software/">Raspberry Pi Imager</a> to install Raspberry Pi OS on a microSD card. 
-    Insert the prepared microSD card into the Raspberry Pi and boot it up!
+    Install <a href="https://www.raspberrypi.com/software/">Raspberry Pi OS</a> on a microSD card.
+  <p>I used the official Raspberry Pi Imager to install Raspberry Pi OS Lite.</p>
+  <p>
+    <a href="https://www.raspberrypi.com/software/">
+			<img src="https://assets.raspberrypi.com/static/md-bfd602be71b2c1099b91877aed3b41f0.png" height="250">
+		</a>
+	</p>
   </li>
   <li>
-		<a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/overview">Connect your Raspberry Pi to the Internet.</a>
+    Insert the prepared microSD card into the Raspberry Pi and apply power.
   </li>
-	<li>
-		(Optional) <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Set Up SSH for Remote Connection</a>.
-		With an SSH connection, you can log in to your Raspberry Pi remotely (from your regular computer). You’ll no longer need the HDMI monitor and USB mouse/keyboard connected to your Raspberry Pi.
-	</li>
-	<li>
-		(Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md">Sublime Text</a>.
-		Alternatively, you can ignore this step altogether and just use Nano to write and edit code. Nano is a simple command line text editor that comes preinstalled on Raspberry Pi OS.
+  <li>
+    <a href="https://learn.adafruit.com/adafruits-raspberry-pi-lesson-3-network-setup/overview">Connect your Raspberry Pi to the Internet.</a>
+  </li>
+  <li>
+    (Optional) <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Set Up SSH for Remote Connection</a>. With an SSH connection, you can log in to your Raspberry Pi remotely (from your regular computer). You’ll no longer need the HDMI monitor and USB mouse/keyboard connected to your Raspberry Pi.
+  </li>
+  <li>
+    (Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md">Sublime Text</a>. Alternatively, you can ignore this step altogether and just use Nano to write and edit code. Nano is a simple command line text editor that comes preinstalled on Raspberry Pi OS.
   </li>
 </ol>    
 
@@ -136,9 +149,9 @@ You’ll need these last two items to interface with your Raspberry Pi the first
 Follow Adafruit's [great tutorial](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/assembly)
 on how to solder the components of the RGB Matrix HAT.
 
-Don’t be intimidated! This project was my first time soldering. I was able to do it, and you can do it too.
-
 If you’re new to soldering, see also Adafruit’s [Guide to Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering).
+
+Don’t be intimidated! This project was my first time soldering. I was able to do it and you can do it too.
   
  ---
 <a href="https://twitter.com/heatheramahan/status/782779412462743552"><img align="left" height="150" src="https://pbs.twimg.com/media/Ctz9ssYUkAAT1fu.jpg"></a>
@@ -166,27 +179,37 @@ Solder? I hardly know her!
 Follow Adafruit’s [instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices)
 for connecting the hardware, installing PIL (Python Image Library), and downloading/running their demo code.
     
-When you have the Adafruit demos working, you’re ready to start creating designs of your own!
+When you have the Adafruit demos working, you’re ready to start displaying your own animations!
 
-## Display Pixel Art Animations
+## Display Pixel Art Animation
 
 
-  1. Make a 32x32 pixel art animation using [Aesprite](https://www.aseprite.org/) (or some other software) and export it as a .gif.
-    You’ll probably want to do this step on your regular computer.
+  1. On your regular computer, make a 32x32 pixel art animation using [Aesprite](https://www.aseprite.org/) (or some other software) and export it as a gif.
     
 
   2. Copy your animated gif onto your Raspberry Pi.
-     On your regular computer, open a new terminal and type:
-    `scp <source> pi@<pi_ip>:<destination>`
-    where `<source>` is the path to the file you want to copy, `<pi_ip>` is your Raspberry Pi’s IP address, and `<destination>` the path to this project directory on your Raspberry Pi.
+     
+		On your regular computer, open a new terminal and type:
+		```
+		scp <source> pi@<pi_ip>:<destination>
+		```
+		replacing the following parts of the command as described:
+		- `<source>` is the path to the file you want to copy
+		- `<pi_ip>` is your Raspberry Pi’s IP address
+		- `<destination>` the path to this project directory on your Raspberry Pi
     
 
-  3. Run the displayGIF script to display your animation.
-     On the Raspberry Pi or in your SSH terminal, type:
-    `python displayGIF.py`
-    By default, the script displays the included sample gif created by [@jettisonjoe](https://twitter.com/jettisonjoe). (Thanks Joe!) ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif)
-    To display your own gif, simply replace `myGIF` in the code with the name of your gif.
-    Use `Ctrl-C` in the command line to stop the script.
+  3. Run the `displayGIF.py` script to display your animation.
+  	
+		On the Raspberry Pi or in your SSH terminal, type:
+		```
+		python displayGIF.py
+		```
+		By default, the script displays the included sample gif created by [@jettisonjoe](https://github.com/jettisonjoe). ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif)
+    
+		To display your own gif, simply replace `myGIF` in the code with the name of your gif.
+    
+		Use `Ctrl-C` in the command line to stop the script.
     
 
 ### (Optional) Run on boot
