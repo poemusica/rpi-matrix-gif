@@ -34,79 +34,29 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 
 ## HARDWARE
 
-### Matrix
-* [32x32 RGB LED Matrix Panel - 5mm Pitch](https://www.adafruit.com/products/2026)
+| [32x32 RGB LED Matrix Panel - 5mm Pitch](https://www.adafruit.com/products/2026) | [Raspberry Pi Model B+ 512MB RAM](https://www.adafruit.com/products/1914) | [Adafruit RGB Matrix HAT + RTC for Raspberry Pi - Mini Kit](https://www.adafruit.com/product/2345) |
+| :---: | :---: | :---: |
+| <a href="https://www.adafruit.com/products/2026"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2026-05.jpg"></a> | <a href="https://www.adafruit.com/products/1914"><img height="150" src="https://cdn-shop.adafruit.com/970x728/1914-01.jpg"></a> | <a href="https://www.adafruit.com/product/2345"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2345-08.jpg"></a> |
+| Displays graphics on a grid of 1024 dazzling RGB LEDs! | The brains of the operation. I used Model B+, but models A+, Pi 2 and Pi 3 are also fine for this project. | Plugs into your Raspberry Pi and allows you to control the RBG LED Matrix panel. (Soldering required!) |
 
-  <a href="https://www.adafruit.com/products/2026"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2026-05.jpg"></a>
+
+| [8GB Class 10 SD/MicroSD Memory Card - SD Adapter Included](https://www.adafruit.com/products/2692) | (Optional) [Mini USB WiFi Module - RTL8188eu - 802.11b/g/n](https://www.adafruit.com/product/2810)[^wifi]| [5V 4A (4000mA) switching power supply - UL Listed](https://www.adafruit.com/product/1466) | [Female DC Power adapter - 2.1mm jack to screw terminal block](https://www.adafruit.com/products/368)|
+| :---: | :---: | :---: | :---: |
+| <a href="https://www.adafruit.com/products/2692"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2692-01.jpg"></a>| <a href="https://www.adafruit.com/product/2810"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2810-10.jpg"></a> | <a href="https://www.adafruit.com/product/1466"><img height="150" src="https://cdn-shop.adafruit.com/970x728/1466-02.jpg"></a> | <a href="https://www.adafruit.com/products/368"><img height="150" src="https://cdn-shop.adafruit.com/970x728/368-03.jpg"></a> |
+| Storage for Raspberry Pi OS and your projects. | Connects your Raspberry Pi to the internet via wifi. | Powers the RGB Matrix HAT. | Connects the HAT to the power supply. |
   
-  Displays graphics on a grid of 1024 RGB LEDs!
-  
+[^wifi]:
+    If you are using a Raspberry Pi that includes built-in wifi (ex: Raspberry Pi 3), you do need to purchase a wifi module. Alternatively, you can use an Ethernet cable for a wired network connection. Originally, I used the [Miniature WiFi (802.11b/g/n) Module: For Raspberry Pi and more](https://www.adafruit.com/product/814) but this product is now discontinued. The product linked in the table is a recommended alternative. 
 
-### Microcontroller
-* [Raspberry Pi Model B+ 512MB RAM](https://www.adafruit.com/products/1914)
-  
-  <a href="https://www.adafruit.com/products/1914"><img height="150" src="https://cdn-shop.adafruit.com/970x728/1914-01.jpg"></a>
-
-  The brains of the operation. I used Model B+, but models A+, Pi 2 and Pi 3 are also fine for this project.
-
-* [Adafruit RGB Matrix HAT + RTC for Raspberry Pi - Mini Kit](https://www.adafruit.com/product/2345)
-  
-  <a href="https://www.adafruit.com/product/2345"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2345-08.jpg"></a>
-
-  Plugs into your Raspberry Pi and allows you to control the RBG LED Matrix panel. (Soldering required!)
-  
-* [8GB Class 10 SD/MicroSD Memory Card - SD Adapter Included](https://www.adafruit.com/products/2692)
-
-  <a href="https://www.adafruit.com/products/2692"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2692-01.jpg"></a>
-  
-  Storage for Raspberry Pi OS and your projects.
-
-* ~~<s> (Optional) [Miniature WiFi (802.11b/g/n) Module: For Raspberry Pi and more](https://www.adafruit.com/product/814) </s>~~
-  
-  Product discontinued. See item below for alternatives.
-  
-* (Optional) [Mini USB WiFi Module - RTL8188eu - 802.11b/g/n](https://www.adafruit.com/product/2810)
-  
-  <a href="https://www.adafruit.com/product/2810"><img height="150" src="https://cdn-shop.adafruit.com/970x728/2810-10.jpg"></a>
-  
-  Connects your Raspberry Pi to the internet via wifi.
-  * If you are using a Raspberry Pi that includes built-in wifi (ex: Raspberry Pi 3), you do need to purchase a wifi module.
-  * Alternatively, you can use an Ethernet cable for a wired network connection. 
-
-
-### Power
-* [5V 4A (4000mA) switching power supply - UL Listed](https://www.adafruit.com/product/1466)
-  
-  <a href="https://www.adafruit.com/product/1466"><img height="150" src="https://cdn-shop.adafruit.com/970x728/1466-02.jpg"></a>
-  
-  Powers the RGB Matrix HAT.
-
-* [Female DC Power adapter - 2.1mm jack to screw terminal block](https://www.adafruit.com/products/368)
-  
-  <a href="https://www.adafruit.com/products/368"><img height="150" src="https://cdn-shop.adafruit.com/970x728/368-03.jpg"></a>
-
-  Connects the HAT to the power supply.
-
-### Tools
-* USB SD card reader
-* Soldering iron and solder
-* Wire cutters
-
-### Other
-* Micro USB cable
-  
-  Powers the Raspberry Pi using your regular computer’s USB port or a USB wall charger.
-
-* USB mouse and keyboard 
-* HDMI display and cable
-
-
-You’ll need these last two items to interface with your Raspberry Pi the first time you log in. Later, you can set up SSH to access your Raspberry Pi remotely.
+| [USB MicroSD Card Reader/Writer](https://www.adafruit.com/product/939) | [USB A to Micro-B cable](https://www.adafruit.com/product/592) | USB mouse & keyboard, HDMI display & cable | Soldering Supplies |
+| :---: | :---: | :---: | :---: |
+| <a href="https://www.adafruit.com/product/939"><img height="150" src="https://cdn-shop.adafruit.com/970x728/939-06.jpg"></a> | <a href="https://www.adafruit.com/product/592"><img height="150" src="https://cdn-shop.adafruit.com/970x728/592-01.jpg"></a> | ![](https://staging-assets.raspberrypi.com/static/hero__container-bg-89d1baabda817d708f2a5fb82ece2c6c.svg)| <a href="https://learn.adafruit.com/adafruit-guide-excellent-soldering"><img height="150" src="https://cdn-learn.adafruit.com/guides/cropped_images/000/000/102/medium640/Solder_Badge.png"></a> |
+| Required for installing Rasberry Pi OS. | Powers the Raspberry Pi using your regular computer’s USB port or a USB wall charger. | You’ll need these items to interface with your Raspberry Pi the first time you log in. Later, you can set up SSH to access your Raspberry Pi remotely. | Soldering iron, solder, and wirecutters are required to assemble the [Adafruit RGB Matrix HAT + RTC](https://www.adafruit.com/product/2345). |
 
 ---
 
 ## SOFTWARE
-* [Aesprite](https://www.aseprite.org/)
+* [Aseprite](https://www.aseprite.org/)
   
   Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.)
 
@@ -184,7 +134,7 @@ When you have the Adafruit demos working, you’re ready to start displaying you
 ### Step 4: Display Animation
 
 
-  1. On your regular computer, make a 32x32 pixel art animation using [Aesprite](https://www.aseprite.org/) (or some other software) and export it as a gif.
+  1. On your regular computer, make a 32x32 pixel art animation using [Aseprite](https://www.aseprite.org/) (or some other software) and export it as a gif.
     
 
   2. Copy your animated gif onto your Raspberry Pi.
