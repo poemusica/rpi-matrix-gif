@@ -118,7 +118,7 @@ You’ll need these last two items to interface with your Raspberry Pi the first
 
 ## INSTRUCTIONS
 
-### Prepare your Raspberry Pi
+### Step 1: Prepare your Raspberry Pi
 
 <ol>
   <li>
@@ -144,7 +144,7 @@ You’ll need these last two items to interface with your Raspberry Pi the first
   </li>
 </ol>    
 
-### Assemble the HAT
+### Step 2: Assemble the HAT
 
 Follow Adafruit's [great tutorial](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/assembly)
 on how to solder the components of the RGB Matrix HAT.
@@ -174,14 +174,14 @@ Solder? I hardly know her!
 
 ---
 
-### Activate the Matrix
+### Step 3: Activate the Matrix
 
 Follow Adafruit’s [instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices)
 for connecting the hardware, installing PIL (Python Image Library), and downloading/running their demo code.
     
 When you have the Adafruit demos working, you’re ready to start displaying your own animations!
 
-## Display Pixel Art Animation
+### Step 4: Display Animation
 
 
   1. On your regular computer, make a 32x32 pixel art animation using [Aesprite](https://www.aseprite.org/) (or some other software) and export it as a gif.
@@ -205,14 +205,15 @@ When you have the Adafruit demos working, you’re ready to start displaying you
 		```
 		python displayGIF.py
 		```
-		By default, the script displays the included sample gif created by [@jettisonjoe](https://github.com/jettisonjoe). ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif)
+		By default, the script displays the included sample gif created by [@jettisonjoe](https://github.com/jettisonjoe).
+		![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif)
     
-		To display your own gif, simply replace `myGIF` in the code with the name of your gif.
+		To display your own gif, replace `myGIF` in the code with the name of your gif.
     
-		Use `Ctrl-C` in the command line to stop the script.
+		If you want to stop the script, use the `Ctrl`+`c` key combination.
     
 
-### (Optional) Run on boot
+### (Optional) Step 5: Run on boot
 
 If you want the `displayGIF.py` script to run automatically whenever you start up the Raspberry Pi,
 follow [these instructions](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md)
