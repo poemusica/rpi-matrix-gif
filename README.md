@@ -1,13 +1,5 @@
 # Animated GIFs on Adafruit RGB LED Matrix with Raspberry Pi
 
-**Table of Contents**
-- [About](https://github.com/poemusica/rpi-matrix-gif#about)
-- [Hardware](https://github.com/poemusica/rpi-matrix-gif#hardware)
-- [Software](https://github.com/poemusica/rpi-matrix-gif#software)
-- [Instructions](https://github.com/poemusica/rpi-matrix-gif#instructions)
-
-
-## ABOUT
 This README describes the process of using a **Raspberry Pi** microcontroller along with my `displayGIF.py` script to display an **animated gif** on an **Adafruit RGB LED Matrix**. 
 
 For example, I used my matrix to display a spooky ghost gif for Halloween. :jack_o_lantern:
@@ -56,13 +48,11 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 ---
 
 ## SOFTWARE
-* [Aseprite](https://www.aseprite.org/)
-  
-  Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.)
 
-* [Nano](https://www.nano-editor.org/)
-  
-  Command line text editor that comes pre-installed on Raspberry Pi OS. (Or some other code editor, such as [Sublime Text](https://www.sublimetext.com/) or [VS Code](https://code.visualstudio.com/).)
+| [Aseprite](https://www.aseprite.org/) | [Nano](https://www.nano-editor.org/) |
+| :---: | :---: |
+| <a href="https://www.aseprite.org"><img height="150" src="https://www.aseprite.org/assets/images/header-logo.png"></a> | <a href="https://www.nano-editor.org/"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/1200px-Gnu-nano.svg.png"></a> |
+| Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.) | Command line text editor that comes pre-installed on Raspberry Pi OS. (Or some other code editor, such as [Sublime Text](https://www.sublimetext.com/) or [VS Code](https://code.visualstudio.com/).) |
 
 ---
 
