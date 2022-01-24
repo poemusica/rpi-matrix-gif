@@ -2,7 +2,7 @@
 
 This README describes the process of using a **Raspberry Pi** microcontroller along with my `displayGIF.py` script to display an **animated gif** on a **32x32 RGB LED Matrix**.
 
-For example, I used my matrix to display a spooky ghost gif for Halloween. 🎃
+For example, I used my Matrix to display a spooky ghost gif for Halloween. 🎃
 
 ---
 <a href="https://twitter.com/heatheramahan/status/789191493088980992"><img align="left" height="150" src="https://i.giphy.com/media/rZL5cIy8irYM2JCL75/giphy-downsized-large.gif"></a>
