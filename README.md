@@ -205,9 +205,30 @@ The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I re
 	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/myGIF.gif >myGIF.gif
 	```    
 
-3. [FIXME 😭] On your Raspberry Pi, run the Python script:
+3. [FIXME 😭] 
 	
-	`python displayGIF.py`
+	IMPORTANT: In order to actually use the `rgbmatrix` Python library, you have to:
+	
+	
+	Manually run `sudo apt install python3-distutils`
+	because `distutils.core` is required but not included in the default Python installation on Raspberry Pi OS.
+	
+	It also appears that the Adafruit script might not be working?
+	
+	Manually run `sudo apt-get install python3-dev`
+	
+	Manually run `sudo apt-get install python3-pillow`
+	
+	In the `rpi-rgb-led-matrix/bindings/python` directory:
+	- Manually run `make build-python PYTHON=$(command -v python3)`
+	- Manually run `sudo make install-python PYTHON=$(command -v python3)`
+	
+	
+	[TODO: Test this...]
+	
+	In your project directory, where you performed (1) and (2), run the Python script:
+	
+	`python3 displayGIF.py`
 	
 	By default, the script displays the included sample gif ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
 
