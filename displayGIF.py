@@ -93,8 +93,8 @@ def main():
     matrix = Adafruit_RGBmatrix(32, 1)
     while True:
         for f in frames:
-    		matrix.SetImage(f.im.id, 0, 0)
-    		time.sleep(0.1)
+            matrix.SetImage(f.im.id, 0, 0)
+            time.sleep(0.1)
     
 
 if __name__ == "__main__":
