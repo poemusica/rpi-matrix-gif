@@ -88,11 +88,11 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
   </li>
 	<li>
     Log in to your Raspberry Pi.
-		<p>The default credentials are <strong>pi</strong> (user name) and <strong>raspberry</strong> (password).</p>
+		<p>The default credentials are <code>pi</code> (user name) and <code>raspberry</code> (password).</p>
 	</li>
 	<li><a href="https://www.raspberrypi.com/documentation/computers/configuration.html#wireless-networking-command-line">Connect your Raspberry Pi to Wifi.</a>
 		<p>(Ignore this step if you're using a wired network connection.)</p>
-		<p>The crucial steps are summarized below. Please reference the <a href="https://www.raspberrypi.com/documentation/computers/configuration.html#wireless-networking-command-line">documentation</a> for more details and troubleshooting.</p>
+		<p>The crucial steps are summarized below. Please reference the <a href="https://www.raspberrypi.com/documentation/computers/configuration.html#wireless-networking-command-line">Raspberry Pi documentation</a> for more details and troubleshooting.</p>
 		<ol>
 			<li>Configure the <strong>wireless country</strong> in the <strong>Localization</strong> options using the <code>raspi-config</code> command line tool.</li>
 			<li>Edit the <code>wpa-supplicant.conf</code> file to include your wireless network ID and password.</li>
@@ -102,7 +102,7 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
   <li>
     (Optional) <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Set Up SSH for Remote Connection</a>.
 		<p>With an SSH connection, you can log in to your Raspberry Pi remotely (from your regular computer). You’ll no longer need the HDMI display and USB keyboard to access your Raspberry Pi.</p>
-		<p>The crucial steps are summarized below. Please reference the <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">documentation</a> for more details and troubleshooting.</p>
+		<p>The crucial steps are summarized below. Please reference the <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Raspberry Pi documentation</a> for more details and troubleshooting.</p>
 		<ol>
 			<li>
 				<p>On your Raspberry Pi:</p>
@@ -129,7 +129,7 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
   </li>
 </ol>   
 
-**Tip**: You can gracefully power off your Raspberry Pi via the command line with the command `sudo shutdown -h now`.
+💡**Tip**: You can gracefully power off your Raspberry Pi via the command line with the command `sudo shutdown -h now`.
 
 ### Step 2: Assemble the HAT
 
@@ -211,11 +211,7 @@ After the installation is complete, [try out the demos](https://learn.adafruit.c
 
 ### Step 4: Display the GIF
 
-You're finally ready to display an animated gif on your Matrix!
-
-If you'd like to make your own pixel art gif, I recommend using [Aseprite](https://www.aseprite.org/).
-
-For best results, use a **square** gif as it will be resized to fit the 32x32 LED matrix. 
+You're finally ready to display an animated gif on your Matrix! (If you'd like to make your own pixel art gif, I recommend using [Aseprite](https://www.aseprite.org/).)
 
 1. Copy your gif to your Raspberry Pi.
 	
@@ -251,7 +247,7 @@ For best results, use a **square** gif as it will be resized to fit the 32x32 LE
 	
 	`sudo python3 display_gif.py`
 	
-	By default, the script displays the included sample gif ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
+	By default, the script displays the sample gif (`myGIF.gif`) ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
 
 	To display your own gif, run the script with an additional command line argument:
 	
@@ -260,8 +256,13 @@ For best results, use a **square** gif as it will be resized to fit the 32x32 LE
 	replacing `<your_gif>` with the name of your gif.
 	
 
-**Tip**: If you want to stop the script, use the `Ctrl`+`c` key combination.
-    
+💡**Tip**: If you want to stop the script, use the `Ctrl`+`c` key combination.
+
+🗒️**Notes on limitations**:
+- For best results, use a **square** gif as it will be resized to fit the 32x32 LED matrix.
+- Currently the `rgbamatrix` library [only supports RGB mode](https://github.com/hzeller/rpi-rgb-led-matrix/blob/a93acf26990ad6794184ed8c9487ab2a5c39cd28/bindings/python/rgbmatrix/core.pyx#L14), which means gifs with transparency must be converted from RGBA to RGB (**no transparency**).
+
+
 
 ### (Optional) Step 5: Run on boot
 
