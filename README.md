@@ -103,15 +103,23 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
     (Optional) <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">Set Up SSH for Remote Connection</a>.
 		<p>With an SSH connection, you can log in to your Raspberry Pi remotely (from your regular computer). You’ll no longer need the HDMI display and USB keyboard to access your Raspberry Pi.</p>
 		<p>The crucial steps are summarized below. Please reference the <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/">documentation</a> for more details and troubleshooting.</p>
-		<p>On your Raspberry Pi:</p>
 		<ol>
-			<li>Enable SSH using the <code>raspi-config</code> command line tool.</li>
-			<li>Run the <code>hostname -I</code> command and note your Raspberry Pi's IP address.</li>
-		</ol>
-		<p>On your regular computer:</p>
-		<ol>
-			<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os">Connect to your Raspberry Pi via SSH</a> using the command <code>ssh pi@&lt;IP&gt;</code> in the terminal.</li>
-			<p>Replace <code>&lt;IP&gt;</code> with your Raspberry Pi's IP address.</p>
+			<li>
+				<p>On your Raspberry Pi:</p>
+				<ol>
+					<li>Enable SSH using the <code>raspi-config</code> command line tool.</li>
+					<li>Run the <code>hostname -I</code> command and note your Raspberry Pi's IP address.</li>
+				</ol>
+			</li>
+			<li>
+				<p>On your regular computer:</p>
+				<ol>
+					<li><a href="https://www.raspberrypi.com/documentation/computers/remote-access.html#secure-shell-from-linux-or-mac-os">Connect to your Raspberry Pi via SSH</a> using the terminal command:
+						<p><code>ssh pi@&lt;IP&gt;</code></p>
+						<p>replacing <code>&lt;IP&gt;</code> with your Raspberry Pi's IP address.</p>
+					</li>
+			</ol>
+			</li>
 		</ol>
 		
   </li>
@@ -125,12 +133,12 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 
 ### Step 2: Assemble the HAT
 
-Follow Adafruit's amazing [Assembly](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/assembly) instructions describing how to solder the (included) components of the [Adafruit RGB Matrix HAT](https://www.adafruit.com/product/2345):
+Follow [Adafruit's Assembly instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/assembly) describing how to solder the (included) components of the [Adafruit RGB Matrix HAT](https://www.adafruit.com/product/2345):
 * 2x20 pin socket header
 * 2 pin terminal block
 * 2x8 pin IDC header
 
-You'll need **soldering supplies** (soldering iron, solder, wire cutters) for this step. If you’re new to soldering, see also Adafruit’s [Guide to Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering).
+You'll need **soldering supplies** (soldering iron, solder, wire cutters) for this step. If you’re new to soldering, see also [Adafruit’s Guide to Excellent Soldering](https://learn.adafruit.com/adafruit-guide-excellent-soldering).
 
 Don’t be intimidated! This project was my first time soldering. I was able to do it and you can do it too.
   
@@ -157,34 +165,35 @@ Solder? I hardly know her!
 
 ### Step 3: Activate the Matrix!
 
-1. Follow the **first five steps** of Adafruit’s [Driving Matrices](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices) instructions.
+1. Follow the **first five steps** of [Adafruit’s Driving Matrices instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices).
 
-	The **first five steps** explain how to connect the HAT to the Rasberry Pi and Matrix using the included cables and wires:
+	The **first five steps** explain how to connect the HAT to the Rasberry Pi and Matrix using the included cables and wires, and then apply power:
 	* The 2x20 pin socket header on the HAT attaches to the GPIO header on the Raspberry Pi.
 	* The red and black cables supply power from the HAT to the Matrix. The end with a 4-pin MOLEX connector attaches to the Matrix. The other end attaches to the terminal block on the HAT.
 	* The 2x8 ribbon cable provides the data connection between Matrix and the HAT.
 	* The [5V 4A power supply](https://www.adafruit.com/product/1466) (sold separately) connects to the HAT and supplies power to the Matrix (via the red and black cables).
 
-2. Before continuing to [Step 6](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#step-6-log-into-your-pi-to-install-and-run-software-1745233-16), you need to install some additional modules.
+2. Before continuing to [Adafruit's Step 6](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#step-6-log-into-your-pi-to-install-and-run-software-1745233-16), you need to install some additional modules on your Raspberry Pi.
    
-	 i. Install `python3-distutils`. `distutils.core` is required for this project but it is not included in the default Python installation on Raspberry Pi OS.
+	 1. Install `python3-distutils`. Specifically, `distutils.core` is a required dependency for the `rgbmatrix` library, but it is not included in the default Python installation on Raspberry Pi OS.
+	 		
+			sudo apt install python3-distutils
+			
 	 
-	 `sudo apt install python3-distutils`
+	 2. Install `PIL` (Python Image Library)[^pil]. Required dependency for `rgbmatrix` library and `display_gif` script.
+	 		
+			sudo apt install python3-pil
 	 
-	 ii. Install `PIL` (Python Image Library)[^pil]. Required for this project.
-	 
-	 `sudo apt install python3-pil`
-	 
-	 iii. Install `python3-dev`[^py3-dev]. Required for building the `rgbmatrix` Python library from C++ source code.
-	 
-	 `sudo apt-get install python3-dev`
+	 3. Install `python3-dev`[^py3-dev]. Required dependency for building the `rgbmatrix` Python library from C++ source code.
+			
+			sudo apt-get install python3-dev
 
 3. Complete [Step 6 of Adafruit's instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#step-6-log-into-your-pi-to-install-and-run-software-1745233-16).
-	 This step describes how to download and install a version of the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library[^lib] by [Henner Zeller](https://github.com/hzeller) ([GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)):
+	 Adafruit's installer script downloads, builds, and installs a version of the `rgbmatrix` Python library[^lib].
 
 	The `curl` command downloads the installer script [`rgb-matrix.sh`](https://github.com/adafruit/Raspberry-Pi-Installer-Scripts/blob/main/rgb-matrix.sh) and the `bash` command runs it.
 	```bash
-	curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/rgb-matrix.sh >rgb-matrix.sh
+	curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/rgb-matrix.sh > rgb-matrix.sh
 	sudo bash rgb-matrix.sh
 	```
 
@@ -197,58 +206,63 @@ After the installation is complete, [try out the demos](https://learn.adafruit.c
     The Adafruit installation script is supposed to install `python3-dev` but at the time of writing, it didn't seem to be working.
 
 [^lib]:
-    An earlier (2016) version of this project used Adafruit's now [deprecated fork](https://github.com/adafruit/rpi-rgb-led-matrix) of the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library.
+    See also the [documentation and source code](https://github.com/hzeller/rpi-rgb-led-matrix) for the `rgbmatrix` Python library ([GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)) created by [Henner Zeller](https://github.com/hzeller).
+		An earlier (2016) version of this project used Adafruit's now [deprecated fork](https://github.com/adafruit/rpi-rgb-led-matrix) of Zeller's [`rgbamatrix`](https://github.com/hzeller/rpi-rgb-led-matrix) library.
 
 ### Step 4: Display the GIF
 
-You're finally ready to display an animated gif on your Matrix.
+You're finally ready to display an animated gif on your Matrix!
 
 If you'd like to make your own pixel art gif, I recommend using [Aseprite](https://www.aseprite.org/).
 
-For best results, use a square gif as it will be resized to fit the 32x32 LED matrix. 
+For best results, use a **square** gif as it will be resized to fit the 32x32 LED matrix. 
 
-1. Assuming your animated gif is on your regular computer, you can use the `scp` command to copy it onto your Raspberry Pi.
-  
-	Run this command on your regular computer
+1. Copy your gif to your Raspberry Pi.
 	
-	`
-	scp <source> pi@<pi_ip>:<destination>
-	`
+	1. If your animated gif is on your regular computer, you can use the `scp` command to copy it onto your Raspberry Pi.
 	
-	replacing the following parts as described:
-	- `<source>` is the path to the file you want to copy
-	- `<pi_ip>` is your Raspberry Pi’s IP address
-	- `<destination>` the path to this project directory on your Raspberry Pi
+		Run this command **on your regular computer**
+		
+		`scp <source> pi@<pi_ip>:<destination>`
+		
+		replacing the following parts as described:
+		- `<source>` is the path to the file you want to copy
+		- `<pi_ip>` is your Raspberry Pi’s IP address
+		- `<destination>` the path to this project directory on your Raspberry Pi
+	
+	2. If your animated gif is hosted on the internet, you can use the `curl` command to download it to your Raspberry Pi.
+		
+		Run this command **on your Raspberry Pi**
+		
+		`curl <url> > <destination>`
+		
+		replacing the following parts as described:
+		- `<url>` is the url to your gif
+		- `<destination>` is where you want to download your gif on your Rasberry Pi.
 
 2. On your Raspberry Pi, download my Python `display_gif.py` script and a sample gif with the `curl` command:
   
 	```bash
-	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/display_gif.py >display_gif.py
-	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/myGIF.gif >myGIF.gif
+	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/display_gif.py > display_gif.py
+	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/myGIF.gif > myGIF.gif
 	```    
 
-3. [FIXME 😭] 
+3. In your project directory on your Raspberry Pi (the destination directory for (1) and (2) above), run the Python script:
 	
-	In the `rpi-rgb-led-matrix/bindings/python` directory:
-	- Manually run `make build-python PYTHON=$(command -v python3)`
-	- Manually run `sudo make install-python PYTHON=$(command -v python3)`
-	
-	
-	[TODO: Test this...]
-	
-	In your project directory, where you performed (1) and (2), run the Python script:
-	
-	`python3 display_gif.py`
+	`sudo python3 display_gif.py`
 	
 	By default, the script displays the included sample gif ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
 
-	To display your own gif, replace `myGIF` in the code with the name of your gif.
+	To display your own gif, run the script with an additional command line argument:
+	
+	`sudo python3 display_gif.py <your_gif>`
+	
+	replacing `<your_gif>` with the name of your gif.
+	
 
 **Tip**: If you want to stop the script, use the `Ctrl`+`c` key combination.
     
 
 ### (Optional) Step 5: Run on boot
 
-If you want the `display_gif.py` script to run automatically whenever you start up the Raspberry Pi,
-follow [these instructions](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md)
-to edit the `rc.local` file on your Raspberry Pi.
+If you want the `display_gif.py` script to run automatically whenever you start up the Raspberry Pi, I recommend [running your script as a service using `systemd`](https://www.raspberrypi.com/documentation/computers/using_linux.html#the-systemd-daemon).
