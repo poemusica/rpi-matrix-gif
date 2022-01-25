@@ -1,6 +1,6 @@
 # Display Animated GIFs on 32x32 RGB LED Matrix with Raspberry Pi
 
-This README describes the process of using a **Raspberry Pi** microcontroller along with my `displayGIF.py` script to display an **animated gif** on a **32x32 RGB LED Matrix**.
+This README describes the process of using a **Raspberry Pi** microcontroller along with my `display_gif.py` script to display an **animated gif** on a **32x32 RGB LED Matrix**.
 
 For example, I used my Matrix to display a spooky ghost gif for Halloween. 🎃
 
@@ -198,10 +198,10 @@ The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I re
 	- `<pi_ip>` is your Raspberry Pi’s IP address
 	- `<destination>` the path to this project directory on your Raspberry Pi
 
-2. On your Raspberry Pi, download my Python `displayGIF.py` script and a sample gif with the `curl` command:
+2. On your Raspberry Pi, download my Python `display_gif.py` script and a sample gif with the `curl` command:
   
 	```bash
-	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/displayGIF.py >displayGIF.py
+	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/display_gif.py >display_gif.py
 	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/myGIF.gif >myGIF.gif
 	```    
 
@@ -228,7 +228,7 @@ The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I re
 	
 	In your project directory, where you performed (1) and (2), run the Python script:
 	
-	`python3 displayGIF.py`
+	`python3 display_gif.py`
 	
 	By default, the script displays the included sample gif ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
 
@@ -239,6 +239,6 @@ The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I re
 
 ### (Optional) Step 5: Run on boot
 
-If you want the `displayGIF.py` script to run automatically whenever you start up the Raspberry Pi,
+If you want the `display_gif.py` script to run automatically whenever you start up the Raspberry Pi,
 follow [these instructions](https://www.raspberrypi.org/documentation/linux/usage/rc-local.md)
 to edit the `rc.local` file on your Raspberry Pi.
