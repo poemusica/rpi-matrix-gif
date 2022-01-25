@@ -157,24 +157,44 @@ Solder? I hardly know her!
 
 ### Step 3: Activate the Matrix!
 
-Follow Adafruit’s [Driving Matrices](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices) instructions.
+1. Follow the **first five steps** of Adafruit’s [Driving Matrices](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices) instructions.
 
-The first five steps explain how to connect the HAT to the Rasberry Pi and Matrix using the included cables and wires:
-* The 2x20 pin socket header on the HAT attaches to the GPIO header on the Raspberry Pi.
-* The red and black cables supply power from the HAT to the Matrix. The end with a 4-pin MOLEX connector attaches to the Matrix. The other end attaches to the terminal block on the HAT.
-* The 2x8 ribbon cable provides the data connection between Matrix and the HAT.
-* The [5V 4A power supply](https://www.adafruit.com/product/1466) (sold separately) connects to the HAT and supplies power to the Matrix (via the red and black cables).
+	The **first five steps** explain how to connect the HAT to the Rasberry Pi and Matrix using the included cables and wires:
+	* The 2x20 pin socket header on the HAT attaches to the GPIO header on the Raspberry Pi.
+	* The red and black cables supply power from the HAT to the Matrix. The end with a 4-pin MOLEX connector attaches to the Matrix. The other end attaches to the terminal block on the HAT.
+	* The 2x8 ribbon cable provides the data connection between Matrix and the HAT.
+	* The [5V 4A power supply](https://www.adafruit.com/product/1466) (sold separately) connects to the HAT and supplies power to the Matrix (via the red and black cables).
 
-The last step describes how to download and install a version of the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library[^lib] by [Henner Zeller](https://github.com/hzeller) ([GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)):
+2. Before continuing to [Step 6](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#step-6-log-into-your-pi-to-install-and-run-software-1745233-16), you need to install some additional modules.
+   
+	 i. Install `python3-distutils`. `distutils.core` is required for this project but it is not included in the default Python installation on Raspberry Pi OS.
+	 
+	 `sudo apt install python3-distutils`
+	 
+	 ii. Install `PIL` (Python Image Library)[^pil]. Required for this project.
+	 
+	 `sudo apt install python3-pil`
+	 
+	 iii. Install `python3-dev`[^py3-dev]. Required for building the `rgbmatrix` Python library from C++ source code.
+	 
+	 `sudo apt-get install python3-dev`
 
-The `curl` command downloads the installer script [`rgb-matrix.sh`](https://github.com/adafruit/Raspberry-Pi-Installer-Scripts/blob/main/rgb-matrix.sh) and the `bash` command runs it.
-```bash
-curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/rgb-matrix.sh >rgb-matrix.sh
-sudo bash rgb-matrix.sh
-```
+3. Complete [Step 6 of Adafruit's instructions](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#step-6-log-into-your-pi-to-install-and-run-software-1745233-16).
+	 This step describes how to download and install a version of the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library[^lib] by [Henner Zeller](https://github.com/hzeller) ([GNU General Public License Version 2.0](http://www.gnu.org/licenses/gpl-2.0.txt)):
+
+	The `curl` command downloads the installer script [`rgb-matrix.sh`](https://github.com/adafruit/Raspberry-Pi-Installer-Scripts/blob/main/rgb-matrix.sh) and the `bash` command runs it.
+	```bash
+	curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/rgb-matrix.sh >rgb-matrix.sh
+	sudo bash rgb-matrix.sh
+	```
 
 After the installation is complete, [try out the demos](https://learn.adafruit.com/adafruit-rgb-matrix-plus-real-time-clock-hat-for-raspberry-pi/driving-matrices#testing-the-examples-2982010-30) included in the library to test that the Matrix is working.
 
+[^pil]:
+    The Adafruit installation script is supposed to install `pillow` or `PIL` but at the time of writing, it didn't seem to be working.
+
+[^py3-dev]:
+    The Adafruit installation script is supposed to install `python3-dev` but at the time of writing, it didn't seem to be working.
 
 [^lib]:
     An earlier (2016) version of this project used Adafruit's now [deprecated fork](https://github.com/adafruit/rpi-rgb-led-matrix) of the [rpi-rgb-led-matrix](https://github.com/hzeller/rpi-rgb-led-matrix) library.
@@ -183,7 +203,9 @@ After the installation is complete, [try out the demos](https://learn.adafruit.c
 
 You're finally ready to display an animated gif on your Matrix.
 
-The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I recommend using [Aseprite](https://www.aseprite.org/).
+If you'd like to make your own pixel art gif, I recommend using [Aseprite](https://www.aseprite.org/).
+
+For best results, use a square gif as it will be resized to fit the 32x32 LED matrix. 
 
 1. Assuming your animated gif is on your regular computer, you can use the `scp` command to copy it onto your Raspberry Pi.
   
@@ -206,18 +228,6 @@ The gif must be 32x32 pixels. If you'd like to make your own pixel art gif, I re
 	```    
 
 3. [FIXME 😭] 
-	
-	IMPORTANT: In order to actually use the `rgbmatrix` Python library, you have to:
-	
-	
-	Manually run `sudo apt install python3-distutils`
-	because `distutils.core` is required but not included in the default Python installation on Raspberry Pi OS.
-	
-	It also appears that the Adafruit script might not be working?
-	
-	Manually run `sudo apt-get install python3-dev`
-	
-	Manually run `sudo apt-get install python3-pillow`
 	
 	In the `rpi-rgb-led-matrix/bindings/python` directory:
 	- Manually run `make build-python PYTHON=$(command -v python3)`
