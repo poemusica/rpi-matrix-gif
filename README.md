@@ -55,10 +55,10 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 
 ## SOFTWARE
 
-| [Raspberry PI OS](https://www.raspberrypi.com/software/) | [Aseprite](https://www.aseprite.org/) | [Nano](https://www.nano-editor.org/) |
-| :---: | :---: | :---: |
-| <a href="https://www.raspberrypi.com/software/"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Raspberry_Pi_OS_Logo.png"></a> | <a href="https://www.aseprite.org"><img height="150" src="https://www.aseprite.org/assets/images/header-logo.png"></a> | <a href="https://www.nano-editor.org/"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/1200px-Gnu-nano.svg.png"></a> |
-| The official OS for Raspberry Pi microcontrollers. | Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.) | Command line text editor that comes pre-installed on Raspberry Pi OS. (Or some other code editor, such as [Sublime Text](https://www.sublimetext.com/) or [VS Code](https://code.visualstudio.com/).) |
+| [Raspberry PI OS](https://www.raspberrypi.com/software/) | [Aseprite](https://www.aseprite.org/) | [Nano](https://www.nano-editor.org/) |(Optional) Your preferred code editor 
+| :---: | :---: | :---: | :---: |
+| <a href="https://www.raspberrypi.com/software/"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Raspberry_Pi_OS_Logo.png"></a> | <a href="https://www.aseprite.org"><img height="150" src="https://www.aseprite.org/assets/images/header-logo.png"></a> | <a href="https://www.nano-editor.org/"><img height="150" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/1200px-Gnu-nano.svg.png"></a> | <a href="https://code.visualstudio.com/"><img height="75" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png"></a><a href="https://www.sublimetext.com/"><img height="75" src="https://forum.sublimetext.com/uploads/default/original/3X/7/4/7483840f98832d90e041a4c650e4ee0666572a1a.png"></a> |
+| The official OS for Raspberry Pi microcontrollers. | Animated sprite editor & pixel art tool. (Or some other program for creating 32x32 animated gif.) | Command line text editor that comes pre-installed on Raspberry Pi OS. | A code editor that supports remote editing via SSH. For example: [VS Code](https://code.visualstudio.com/) or [Sublime Text](https://www.sublimetext.com/). |
 
 ---
 
@@ -124,12 +124,14 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 		
   </li>
   <li>
-    (Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md">Sublime Text</a>.
+    (Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://code.visualstudio.com/docs/remote/ssh">Visual Studio Code</a> or <a href="https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md">Sublime Text</a>.
+		<p>The Visual Studio Code <strong>Remote - SSH</strong> extension works great. If you want to SSH to your Raspberry Pi using password authentication, you'll need to <a href="https://code.visualstudio.com/docs/remote/troubleshooting#_enabling-alternate-ssh-authentication-methods">enable the <strong>Show Login Terminal</strong> setting</a>.</p>
 		<p>Alternatively, you can ignore this step and use <a href="https://www.nano-editor.org/">Nano</a> to write and edit code via the command line.</p>
   </li>
 </ol>   
 
 💡**Tip**: You can gracefully power off your Raspberry Pi via the command line with the command `sudo shutdown -h now`.
+
 
 ### Step 2: Assemble the HAT
 
