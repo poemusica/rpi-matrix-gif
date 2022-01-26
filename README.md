@@ -124,7 +124,7 @@ Happy Halloween! 👻 Spooky little collab by <a href="https://twitter.com/jetti
 		
   </li>
   <li>
-    (Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://code.visualstudio.com/docs/remote/ssh">Visual Studio Code</a> or <a href="https://github.com/poemusica/rpi-matrix-gif/blob/master/UsingRsub.md">Sublime Text</a>.
+    (Optional) Set Up Remote Code Editing with your preferred code editor, for example <a href="https://code.visualstudio.com/docs/remote/ssh">Visual Studio Code</a> or <a href="./UsingRsub.md">Sublime Text</a>.
 		<p>The Visual Studio Code <strong>Remote - SSH</strong> extension works great. If you want to SSH to your Raspberry Pi using password authentication, you'll need to <a href="https://code.visualstudio.com/docs/remote/troubleshooting#_enabling-alternate-ssh-authentication-methods">enable the <strong>Show Login Terminal</strong> setting</a>.</p>
 		<p>Alternatively, you can ignore this step and use <a href="https://www.nano-editor.org/">Nano</a> to write and edit code via the command line.</p>
   </li>
@@ -238,7 +238,7 @@ You're finally ready to display an animated gif on your Matrix! (If you'd like t
 		- `<url>` is the url to your gif
 		- `<destination>` is where you want to download your gif on your Rasberry Pi.
 
-2. On your Raspberry Pi, download my Python `display_gif.py` script and a sample gif with the `curl` command:
+2. On your Raspberry Pi, download my Python `display_gif.py` script ([MIT license](./LICENSE)) and a [sample gif](./myGIF.gif) with the `curl` command:
   
 	```bash
 	curl https://raw.githubusercontent.com/poemusica/rpi-matrix-gif/master/display_gif.py > display_gif.py
@@ -249,7 +249,7 @@ You're finally ready to display an animated gif on your Matrix! (If you'd like t
 	
 	`sudo python3 display_gif.py`
 	
-	By default, the script displays the sample gif (`myGIF.gif`) ![Ghost](https://github.com/poemusica/rpi-matrix-gif/blob/master/myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
+	By default, the script displays the sample gif (`myGIF.gif`) ![Ghost](./myGIF.gif) created by [@jettisonjoe](https://github.com/jettisonjoe).
 
 	To display your own gif, run the script with an additional command line argument:
 	
